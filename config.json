@@ -1,0 +1,6 @@
+{
+    "server": {
+        "production": "https://doc-project.vercel.app/",
+        "development": "http://localhost:3000/"
+    }
+}

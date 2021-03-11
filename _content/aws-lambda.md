@@ -17,7 +17,7 @@ These credentials are used to authenticate your user to the AWS account it is as
 ## 2. Create your nodejs project
 
 Refer to this guide to see how to create a new node project:
-[Create a nodejs project from scratch](http://localhost:3000/posts/create-node-project)
+[Create a nodejs project from scratch](https://doc-project.vercel.app/posts/create-node-project)
 
 ## 3. Install the serverless library globally
 
