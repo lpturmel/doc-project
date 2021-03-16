@@ -1,6 +1,6 @@
 import { Credentials, DynamoDB } from "aws-sdk";
-import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
+import hash from "../../../utils/hash";
 
 export default async (req, res) => {
     if (req.method === "POST") {
@@ -55,8 +55,7 @@ export default async (req, res) => {
                 error: "Passwords do not match",
             });
         }
-        const saltRounds = 10;
-        const hashed_password = await bcrypt.hash(password, saltRounds);
+        const hashed_password = await hash(password);
 
         const account_credentials = new Credentials({
             accessKeyId: "AKIASU5QMALPKLL6J4G5",
