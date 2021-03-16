@@ -1,6 +1,6 @@
-const { Credentials, DynamoDB } = require("aws-sdk");
-const bcrypt = require("bcrypt");
-const uuid = require("uuid");
+import { Credentials, DynamoDB } from "aws-sdk";
+import bcrypt from "bcrypt";
+import { v4 as uuidv4 } from "uuid";
 
 export default async (req, res) => {
     if (req.method === "POST") {
@@ -43,7 +43,6 @@ export default async (req, res) => {
                 error: "Missing password_conf in the request body",
             });
         }
-
         const first_name = body.first_name;
         const last_name = body.last_name;
         const email = body.email;
@@ -73,7 +72,7 @@ export default async (req, res) => {
         var putParams = {
             TableName: "scheduling-user-service",
             Item: {
-                _id: { S: uuid.v4() },
+                _id: { S: uuidv4() },
                 first_name: { S: first_name },
                 last_name: { S: last_name },
                 email: { S: email },
