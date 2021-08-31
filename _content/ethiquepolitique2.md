@@ -94,3 +94,8 @@ Sur quoi fonder la morale?
 -   Le vrai, l'honnêteté, le beau, l'amour, le bonheur, la justice, l'équité, la liberté, le respect, la loyauté, l'authenticité, la tolérence, la bonté etc.
 -   Certaines valeurs ont une place - même si elle est variable - dans toutes les cultures et époques
 -   Une valeur omniprésente: "la règle d'or" : faire à autrui ce qu'on voudrait qu'il nous fasse (ne pas faire à autrui ce qu'on ne voudrait pas qu'il nous fasse)
+
+## Deux objections à l'existence de la morale
+
+1. le relativisme
+2. l'origine des valeurs extérieure à soi
