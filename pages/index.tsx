@@ -1,12 +1,37 @@
 import PostItem from "../components/PostItem";
 import { getPosts } from "../lib/tooltip";
 import shortId from "shortid";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState, FunctionComponent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Post } from "../types/post";
 
-export default function Home({ posts }) {
-	const [visible, setVisible] = useState(true);
+export interface HomeProps {
+	posts: Post[];
+}
 
+const Home: FunctionComponent<HomeProps> = ({ posts }) => {
+	const [value, setValue] = useState("");
+	const [filteredPosts, setFilteredPosts] = useState(posts);
+
+	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setValue(e.target.value);
+	};
+
+	useEffect(() => {
+		console.log(filteredPosts);
+		if (value === "") {
+			setFilteredPosts(posts);
+		} else {
+			setFilteredPosts(
+				posts.filter(
+					(post) =>
+						post.data.title
+							.toLowerCase()
+							.indexOf(value.toLowerCase()) !== -1
+				)
+			);
+		}
+	}, [value]);
 	return (
 		<div className="container mx-auto max-w-md">
 			<motion.p
@@ -22,30 +47,25 @@ export default function Home({ posts }) {
 				}}
 				className="font-bold text-4xl mb-10 absolute text-center mt-16"
 			>
-				OS Documentation
+				Jules Documentation
 			</motion.p>
 
-			{/* <div>
-                <button onClick={() => setVisible(!visible)}> Do it </button>
-                <AnimatePresence>
-                    {visible && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="w-16 h-16 bg-red-500"
-                        ></motion.div>
-                    )}
-                </AnimatePresence>
-            </div> */}
-			{posts.map((post, index) => (
-				<Fragment key={shortId.generate()}>
-					<PostItem post={post.data} slug={post.slug} index={index} />
-				</Fragment>
-			))}
+			<input
+				placeholder="Search..."
+				className="flex-1 appearance-none border border-transparent w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+				value={value}
+				onChange={onChange}
+			/>
+			<div className="flex flex-col">
+				{filteredPosts.map((post, index) => (
+					<Fragment key={shortId.generate()}>
+						<PostItem metadata={post.data} slug={post.slug} />
+					</Fragment>
+				))}
+			</div>
 		</div>
 	);
-}
+};
 
 export async function getStaticProps(context) {
 	var posts = getPosts();
@@ -68,3 +88,5 @@ export async function getStaticProps(context) {
 		},
 	};
 }
+
+export default Home;
