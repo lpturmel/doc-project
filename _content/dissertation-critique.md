@@ -48,23 +48,25 @@ Atelier: **Est-il juste d'affirmer que les Français affichent une attitude haut
 -   Problématique: attitude hautaine ou pas
 -   Nombre de textes: 1
 
-Personnel
-| Oui, les Français affichent une attitude hautaine à l'égard des Autochtones parce que | Non, les Français n'affichent pas une attitude hautaine à l'égard des Autochtones parce que |
-| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Les termes employés afin de décrire les Autochtones sont dérogatoires (Sauvages) | La croix plantée sur leur territoire sert de balise pour se retrouver et non un signe de colonisation |
-| Ils utilisent des offrandes afin d'amadouer les Autochtones | Les Français donnent plusieurs biens, chemises, bonnets, chainette, laiton et de la nourriture |
-| Ils prennent possession du territoire malgré la présence des premiers occupants | |
-| Les Français partent avec deux des fils | |
+## Personnel
 
-Groupe
-Oui, les Français affichent une attitude hautaine à l'égard des Autochtones parce que | Non, les Français n'affichent pas une attitude hautaine à l'égard des Autochtones parce que |
-| ------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------------- |
-| Ils les appellent des Sauvages | ils leur offrent de la nourriture
-| ils plantent une croix sur leur territoire sans demander leur permission | ils les traitent de maniere courtoise et polie |
-| ils imposent leurs rites religieux aux Autochtones| ils leur donnent des objets utilitaires |
-| ils feignent d'etre naif/l'ignorance| ils sont ouverts à faire du troc et démontrent de l'intérêt pour leurs objets|
-| ils sont hypocrites en manipulant les autochtones dans le but de les amadouer||
-| ils se considèrent comme supérieurs aux Autochtones ||
-| ils dénigrent les coutumes vestimentaires des Autochtones ||
-| ils considèrent que leurs moyens de transport sont supérieurs à ceux des Autochtones||
-| ils ne font pas l'effort d'essayer de comprendre les Autochtones||
+| Oui, les Français affichent une attitude hautaine à l'égard des Autochtones parce que | Non, les Français n'affichent pas une attitude hautaine à l'égard des Autochtones parce que           |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Les termes employés afin de décrire les Autochtones sont dérogatoires (Sauvages)      | La croix plantée sur leur territoire sert de balise pour se retrouver et non un signe de colonisation |
+| Ils utilisent des offrandes afin d'amadouer les Autochtones                           | Les Français donnent plusieurs biens, chemises, bonnets, chainette, laiton et de la nourriture        |
+| Ils prennent possession du territoire malgré la présence des premiers occupants       |                                                                                                       |
+| Les Français partent avec deux des fils                                               |                                                                                                       |
+
+## Groupe
+
+| Oui, les Français affichent une attitude hautaine à l'égard des Autochtones parce que | Non, les Français n'affichent pas une attitude hautaine à l'égard des Autochtones parce que |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Ils les appellent des Sauvages                                                        | ils leur offrent de la nourriture                                                           |
+| ils plantent une croix sur leur territoire sans demander leur permission              | ils les traitent de maniere courtoise et polie                                              |
+| ils imposent leurs rites religieux aux Autochtones                                    | ils leur donnent des objets utilitaires                                                     |
+| ils feignent d'etre naif/l'ignorance                                                  | ils sont ouverts à faire du troc et démontrent de l'intérêt pour leurs objets               |
+| ils sont hypocrites en manipulant les autochtones dans le but de les amadouer         |                                                                                             |
+| ils se considèrent comme supérieurs aux Autochtones                                   |                                                                                             |
+| ils dénigrent les coutumes vestimentaires des Autochtones                             |                                                                                             |
+| ils considèrent que leurs moyens de transport sont supérieurs à ceux des Autochtones  |                                                                                             |
+| ils ne font pas l'effort d'essayer de comprendre les Autochtones                      |                                                                                             |
