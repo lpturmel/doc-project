@@ -1,49 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-//import Link from "next/link";
+import { Metadata } from "../types/post";
 
 export interface PostItemProps {
-	slug;
-	post: {
-		title: string;
-		author: string;
-		created: string;
-		languages: Array<string>;
-	};
-	index: number;
+	slug: string;
+	metadata: Metadata;
 }
 
 const PostItem: React.FunctionComponent<PostItemProps> = ({
-	post,
+	metadata,
 	slug,
-	index,
 }) => {
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={{
-				opacity: 1,
-				transition: {
-					delay: 0.1 * (index + 1),
-				},
-			}}
-			whileHover={{ scale: 1.1, borderRadius: "5px" }}
-			whileTap={{ scale: 0.9 }}
-			className="shadow-md my-5 p-5 rounded-xl hover:shadow-lg"
+		<motion.a
+			href={"/posts/" + slug}
+			whileHover={{ scale: 1.05, borderRadius: "5px" }}
+			whileTap={{ scale: 0.95 }}
+			className="shadow-md my-5 p-5 rounded-xl border border-transparent hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
 		>
-			<a
-				className="text-xl font-semibold hover:underline"
-				href={"/posts/" + slug}
-			>
-				<p>{post.title}</p>
-			</a>
+			<p className="text-xl font-semibold">{metadata.title}</p>
 
-			<p>{post.author}</p>
-			<p className="font-thin text-gray-400">{post.created}</p>
+			<p>{metadata.author}</p>
+			<p className="font-thin text-gray-400">{metadata.created}</p>
 			<div className="flex flex-row-reverse">
-				{post.languages &&
-					post.languages.map((language, index) => (
+				{metadata.languages &&
+					metadata.languages.map((language, index) => (
 						<p
 							key={index}
 							className="text-xs p-1 rounded-lg border border-gray-500 mr-2"
@@ -52,7 +33,7 @@ const PostItem: React.FunctionComponent<PostItemProps> = ({
 						</p>
 					))}
 			</div>
-		</motion.div>
+		</motion.a>
 	);
 };
 
