@@ -9,6 +9,17 @@ export interface HomeProps {
 	posts: Post[];
 }
 
+const sortPosts = (posts: Post[]) => {
+	return posts.sort((a, b) => {
+		if (a.data.title < b.data.title) {
+			return -1;
+		}
+		if (a.data.title > b.data.title) {
+			return 1;
+		}
+		return 0;
+	});
+};
 const Home: FunctionComponent<HomeProps> = ({ posts }) => {
 	const [value, setValue] = useState("");
 	const [filteredPosts, setFilteredPosts] = useState(posts);
@@ -18,7 +29,6 @@ const Home: FunctionComponent<HomeProps> = ({ posts }) => {
 	};
 
 	useEffect(() => {
-		console.log(filteredPosts);
 		if (value === "") {
 			setFilteredPosts(posts);
 		} else {
@@ -33,7 +43,7 @@ const Home: FunctionComponent<HomeProps> = ({ posts }) => {
 		}
 	}, [value]);
 	return (
-		<div className="container mx-auto max-w-md">
+		<div className="container mx-auto md:max-w-md max-w-xs">
 			<motion.p
 				initial={{ opacity: 0, top: "-100px" }}
 				animate={{
@@ -47,7 +57,7 @@ const Home: FunctionComponent<HomeProps> = ({ posts }) => {
 				}}
 				className="font-bold text-4xl mb-10 absolute text-center mt-16"
 			>
-				Jules Documentation
+				Notes de cours
 			</motion.p>
 
 			<input
@@ -68,20 +78,23 @@ const Home: FunctionComponent<HomeProps> = ({ posts }) => {
 };
 
 export async function getStaticProps(context) {
-	var posts = getPosts();
-	posts = posts.map((post) => {
-		const languages = post.data.languages
-			? post.data.languages.split(",")
-			: [];
-		return {
-			data: {
-				...post.data,
-				languages,
-			},
-			content: post.content,
-			slug: post.slug,
-		};
-	});
+	let rawPosts = getPosts();
+	const posts = sortPosts(
+		rawPosts.map((post) => {
+			const languages = post.data.languages
+				? post.data.languages.split(",")
+				: [];
+			return {
+				data: {
+					...post.data,
+					languages,
+				},
+				content: post.content,
+				slug: post.slug,
+			};
+		}) as Post[]
+	);
+
 	return {
 		props: {
 			posts,
