@@ -101,3 +101,31 @@ Cela se traduit en littérature, avec la naissance d'un courant nommé **littér
 **Wajdi Mouawad** -> Libanais
 
 **Kim Thuy** -> Vietnamienne
+
+## Charactéristiques d'ajourd'hui
+
+**Aujourd'hui**, la littérature québéecoise prend de nouvelles formes
+
+### Diversité
+
+Des personnes d'horizons divers publient au Québec, sans que leurs origines soient le sujet de leurs oeuvres
+
+### Autofiction
+
+Plusieurs auteurs et autrices brouillent les frontières entre leur vie personnelle et la fiction
+
+### Décolonisation
+
+Des personnes issues des Premiers Peuples font entendre leur voie et prennent une place que leur revient de droit
+
+### LGBTQ2+
+
+Des personnes trans ou non binaires rendent compte de leur réalité à travers la littérature
+
+### Féminisme
+
+Les femment prennent une part active à la vie littéraire et utilisent leurs oeuvres pour soutenir la cause féministe
+
+### Bonjour-hi
+
+Le français québécois est utilisé de manière décomplexée, avec ses jurons et ses anglicismes
