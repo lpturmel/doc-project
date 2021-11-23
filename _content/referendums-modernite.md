@@ -1,5 +1,5 @@
 ---
-title: La dissertation critique
+title: Référendums et Modernité
 author: Louis-Philippe Turmel
 created: Jeudi, 11 novembre 2021
 ---
