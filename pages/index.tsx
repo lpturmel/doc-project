@@ -1,105 +1,54 @@
-import PostItem from "../components/PostItem";
-import { getPosts } from "../lib/tooltip";
-import shortId from "shortid";
-import { Fragment, useEffect, useState, FunctionComponent } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { getCategorizedPosts, getPosts } from "../lib/markdown";
+import { useEffect, useState, FunctionComponent } from "react";
 import { Post } from "../types/post";
+import PostCategory from "../components/PostCategory";
+import SearchModal from "../components/SearchModal";
 
 export interface HomeProps {
-	posts: Post[];
+    categorizedPosts: { [key: string]: Post[] };
+    posts: Post[];
 }
 
 const sortPosts = (posts: Post[]) => {
-	return posts.sort((a, b) => {
-		if (a.data.title < b.data.title) {
-			return -1;
-		}
-		if (a.data.title > b.data.title) {
-			return 1;
-		}
-		return 0;
-	});
+    return posts.sort((a, b) => {
+        if (a.data.title < b.data.title) {
+            return -1;
+        }
+        if (a.data.title > b.data.title) {
+            return 1;
+        }
+        return 0;
+    });
 };
-const Home: FunctionComponent<HomeProps> = ({ posts }) => {
-	const [value, setValue] = useState("");
-	const [filteredPosts, setFilteredPosts] = useState(posts);
+const Home: FunctionComponent<HomeProps> = ({ posts, categorizedPosts }) => {
+    return (
+        <div className="h-full container mx-auto max-w-4xl p-10 pt-20">
+            <p className="font-bold text-white text-4xl mb-10 text-center">
+                Notes de cours
+            </p>
 
-	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setValue(e.target.value);
-	};
-
-	useEffect(() => {
-		if (value === "") {
-			setFilteredPosts(posts);
-		} else {
-			setFilteredPosts(
-				posts.filter(
-					(post) =>
-						post.data.title
-							.toLowerCase()
-							.indexOf(value.toLowerCase()) !== -1
-				)
-			);
-		}
-	}, [value]);
-	return (
-		<div className="container mx-auto md:max-w-md max-w-xs">
-			<motion.p
-				initial={{ opacity: 0, top: "-100px" }}
-				animate={{
-					scale: 1,
-					opacity: 1,
-					top: 0,
-					position: "relative",
-					transition: {
-						delay: 0.3,
-					},
-				}}
-				className="font-bold text-4xl mb-10 absolute text-center mt-16"
-			>
-				Notes de cours
-			</motion.p>
-
-			<input
-				placeholder="Search..."
-				className="flex-1 appearance-none border border-transparent w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-				value={value}
-				onChange={onChange}
-			/>
-			<div className="flex flex-col">
-				{filteredPosts.map((post, index) => (
-					<Fragment key={shortId.generate()}>
-						<PostItem metadata={post.data} slug={post.slug} />
-					</Fragment>
-				))}
-			</div>
-		</div>
-	);
+            <SearchModal posts={posts} />
+            {Object.keys(categorizedPosts).map((category, index) => (
+                <PostCategory
+                    key={index}
+                    category={category}
+                    posts={categorizedPosts[category]}
+                />
+            ))}
+        </div>
+    );
 };
 
-export async function getStaticProps(context) {
-	let rawPosts = getPosts();
-	const posts = sortPosts(
-		rawPosts.map((post) => {
-			const languages = post.data.languages
-				? post.data.languages.split(",")
-				: [];
-			return {
-				data: {
-					...post.data,
-					languages,
-				},
-				content: post.content,
-				slug: post.slug,
-			};
-		}) as Post[]
-	);
+export async function getStaticProps() {
+    let categorizedPosts = getCategorizedPosts();
+    let posts = getPosts();
 
-	return {
-		props: {
-			posts,
-		},
-	};
+    return {
+        props: {
+            categorizedPosts,
+            posts,
+        },
+    };
 }
 
 export default Home;

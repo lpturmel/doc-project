@@ -2,6 +2,8 @@
 title: Exemple de dissertation critique
 author: Louis-Philippe Turmel
 created: Lundi, 20 septembre 2021
+description: "Exemples de paragraphes de developpement d'une dissertation critique"
+class: "Litterature Quebecoise"
 ---
 
 ## Paragraphe #2

@@ -1,14 +1,34 @@
 module.exports = {
-    purge: [
+    content: [
         "./pages/**/*.{js,ts,tsx,jsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: true, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            gridTemplateColumns: {
+                posts: "repeat(auto-fill, minmax(400px, 1fr))",
+            },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        color: "#FFFFFF",
+                        h2: {
+                            color: "#ECB365",
+                        },
+                        h3: {
+                            color: "#FFFFFF",
+                        },
+                    },
+                },
+            },
+        },
     },
     variants: {
         extend: {},
     },
-    plugins: [require("@tailwindcss/typography")],
+    plugins: [
+        require("@tailwindcss/typography"),
+        require("tailwind-scrollbar-hide"),
+    ],
 };

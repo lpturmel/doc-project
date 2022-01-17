@@ -1,15 +1,11 @@
-import { useEffect, useState } from "react";
-import { getPosts } from "../../lib/tooltip";
+import { useEffect, useState, FunctionComponent } from "react";
+import { getPosts } from "../../lib/markdown";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import Prism from "prismjs";
-import {
-    useViewportScroll,
-    motion,
-    useTransform,
-    useSpring,
-} from "framer-motion";
-import HomeButton from "../../components/HomeButton";
+import { useViewportScroll, motion } from "framer-motion";
+import PostHeader from "../../components/PostHeader";
+import Navbar from "../../components/Navbar";
 
 export interface SlugProps {
     content: any;
@@ -20,14 +16,7 @@ export interface SlugProps {
     languages: Array<string>;
 }
 
-const Slug: React.FunctionComponent<SlugProps> = ({
-    content,
-    author,
-    created,
-    title,
-    languages,
-    slug,
-}) => {
+const Slug: FunctionComponent<SlugProps> = ({ content, created, title }) => {
     const hydratedContent = hydrate(content);
     const { scrollYProgress } = useViewportScroll();
     const [yProgress, setYProgress] = useState(scrollYProgress.get());
@@ -40,8 +29,8 @@ const Slug: React.FunctionComponent<SlugProps> = ({
     }, []);
 
     return (
-        <div>
-            <HomeButton />
+        <div className="min-h-full">
+            <Navbar />
             <div
                 style={{
                     backgroundColor: "transparent",
@@ -60,27 +49,11 @@ const Slug: React.FunctionComponent<SlugProps> = ({
                     }}
                 ></motion.div>
             </div>
-            {/* <svg viewBox="0 0 60 60" style={{ position: "fixed" }}>
-                <motion.path
-                    fill="none"
-                    strokeWidth="5"
-                    stroke="black"
-                    strokeDasharray="0 1"
-                    d="L 0, 20"
-                    style={{
-                        pathLength,
-                    }}
-                />
-            </svg> */}
-            <div className="container mx-auto max-w-xl mt-10">
-                <div className="p-8 border border-gray-300 rounded-lg shadow-md">
-                    <p className="text-3xl my-2 font-bold">{title}</p>
-                    <p className="italic">By {author} </p>
-                    <p className="text-gray-400">{created}</p>
+            <PostHeader title={title} date={created} />
+            <div className="bg-gray-800 h-full py-10">
+                <div className="prose prose-a:text-sky-700 prose-a:no-underline prose-a:underline prose-strong:text-white prose-pre:scrollbar-hide text-white mt-10 container mx-auto max-w-4xl p-4">
+                    {hydratedContent}
                 </div>
-            </div>
-            <div className="prose prose-indigo mt-10 container mx-auto max-w-xl p-4 rounded-md container-blurred">
-                {hydratedContent}
             </div>
         </div>
     );

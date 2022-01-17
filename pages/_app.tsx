@@ -1,4 +1,4 @@
-//import "../styles/globals.css";
+import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
 import "prismjs/themes/prism-tomorrow.css";
 import { motion, AnimatePresence } from "framer-motion";
@@ -6,14 +6,16 @@ import { motion, AnimatePresence } from "framer-motion";
 function MyApp({ Component, pageProps, router }) {
     return (
         <>
+            <div id="portal" />
             <AnimatePresence exitBeforeEnter>
                 <motion.div
+                    className="bg-gray-800 h-full overflow-auto"
                     key={router.route}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                 >
-                    <Component {...pageProps} />;
+                    <Component {...pageProps} />
                 </motion.div>
             </AnimatePresence>
         </>

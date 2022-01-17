@@ -2,6 +2,8 @@
 title: La dissertation critique
 author: Louis-Philippe Turmel
 created: Jeudi, 2 septembre 2021
+description: "Definition des differentes parties d'une dissertation critique"
+class: "Litterature Quebecoise"
 ---
 
 ## La dissertation critique

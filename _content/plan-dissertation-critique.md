@@ -2,6 +2,8 @@
 title: Plan de dissertation critique
 author: Louis-Philippe Turmel
 created: Lundi, 13 septembre 2021
+description: "Comment faire un plan de dissertation critique"
+class: "Litterature Quebecoise"
 ---
 
 ## Quelques règles de grammaire
