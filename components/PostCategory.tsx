@@ -12,7 +12,7 @@ const PostCategory: FunctionComponent<PostCategoryProps> = ({
     posts,
 }) => {
     return (
-        <div className="flex flex-col w-full mt-8">
+        <div className="flex flex-col w-full my-8">
             <div className="w-full flex flex-col gap-4">
                 <div className="flex flex-row justify-between items-center w-full">
                     <p className="text-white text-xl font-semibold">

@@ -11,7 +11,7 @@ const ModalContent: FunctionComponent<ModalContentProps> = (props) => {
     return (
         <div
             ref={ref}
-            className="relative rounded-md max-w-md m-auto w-full flex flex-col mt-16 mb-16 z-50 text-white bg-gray-800"
+            className="relative rounded-md max-w-md lg:max-w-2xl m-auto w-full flex flex-col mt-16 mb-16 z-50 text-white bg-gray-800"
         >
             {props.children}
         </div>

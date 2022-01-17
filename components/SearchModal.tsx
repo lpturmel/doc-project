@@ -29,14 +29,20 @@ const SearchModal: FunctionComponent<SearchModalProps> = ({ posts }) => {
         if (value === "") {
             setFilteredPosts(posts);
         } else {
-            // setFilteredPosts(
-            //     posts.filter(
-            //         (post) =>
-            //             post.data.title
-            //                 .toLowerCase()
-            //                 .indexOf(value.toLowerCase()) !== -1
-            //     )
-            // );
+            setFilteredPosts(
+                posts.filter(
+                    (post) =>
+                        post.data.title
+                            .toLowerCase()
+                            .indexOf(value.toLowerCase()) !== -1 ||
+                        post.data.description
+                            .toLowerCase()
+                            .indexOf(value.toLowerCase()) !== -1 ||
+                        post.data.class
+                            .toLowerCase()
+                            .indexOf(value.toLowerCase()) !== -1
+                )
+            );
         }
         return () => {
             document.removeEventListener("keydown", closeOnEscape);
@@ -61,7 +67,7 @@ const SearchModal: FunctionComponent<SearchModalProps> = ({ posts }) => {
                 <ModalOverlay />
                 <ModalContent onClose={closeModal}>
                     <ModalBody>
-                        <div className="relative flex border-[1px] border-gray-600 flex-col bg-gray-800 rounded-md min-h-[400px]">
+                        <div className="relative flex flex-col bg-gray-800 rounded-md min-h-[400px]">
                             <BiSearch className="absolute left-2 top-[16px] w-6 h-6 text-gray-600" />
                             <input
                                 ref={inputRef}
@@ -70,14 +76,16 @@ const SearchModal: FunctionComponent<SearchModalProps> = ({ posts }) => {
                                 value={value}
                                 onChange={onChange}
                             />
-                            <hr className="bg-gray-600 h-[1px] border-0 w-full" />
+                            <hr className="bg-gray-700/50 h-[1px] border-0 w-full" />
                             <p className="p-4 text-gray-200 font-semibold">
                                 Results
                             </p>
-                            <hr className="bg-gray-600 h-[1px] border-0 w-full" />
-                            {posts.map((post) => (
-                                <SearchItem key={post.slug} post={post} />
-                            ))}
+                            <hr className="bg-gray-700/50 h-[1px] border-0 w-full" />
+                            <div className="flex flex-col overflow-y-auto">
+                                {filteredPosts.map((post) => (
+                                    <SearchItem key={post.slug} post={post} />
+                                ))}
+                            </div>
                         </div>
                     </ModalBody>
                 </ModalContent>

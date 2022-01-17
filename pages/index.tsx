@@ -1,5 +1,5 @@
 import { getCategorizedPosts, getPosts } from "../lib/markdown";
-import { useEffect, useState, FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { Post } from "../types/post";
 import PostCategory from "../components/PostCategory";
 import SearchModal from "../components/SearchModal";

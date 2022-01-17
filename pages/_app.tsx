@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps, router }) {
             <div id="portal" />
             <AnimatePresence exitBeforeEnter>
                 <motion.div
-                    className="bg-gray-800 h-full overflow-auto"
+                    className="bg-gray-800 min-h-[100%]"
                     key={router.route}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

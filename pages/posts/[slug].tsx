@@ -51,7 +51,7 @@ const Slug: FunctionComponent<SlugProps> = ({ content, created, title }) => {
             </div>
             <PostHeader title={title} date={created} />
             <div className="bg-gray-800 h-full py-10">
-                <div className="prose prose-a:text-sky-700 prose-a:no-underline prose-a:underline prose-strong:text-white prose-pre:scrollbar-hide text-white mt-10 container mx-auto max-w-4xl p-4">
+                <div className="prose prose-a:text-sky-700 prose-headings:text-gray-200 prose-p:text-gray-200 prose-li:text-gray-200 prose-tr:text-gray-200 prose-strong:text-gray-300 prose-thead:border-gray-600 prose-tr:border-gray-600 prose-h2:text-indigo-500 prose-a:no-underline prose-a:underline prose-strong:text-white prose-pre:scrollbar-hide text-white mt-10 container mx-auto max-w-4xl p-4">
                     {hydratedContent}
                 </div>
             </div>
