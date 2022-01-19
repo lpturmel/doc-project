@@ -77,7 +77,7 @@ const SearchModal: FunctionComponent<SearchModalProps> = ({ posts }) => {
                                 onChange={onChange}
                             />
                             <hr className="bg-gray-700/50 h-[1px] border-0 w-full" />
-                            <p className="p-4 text-gray-200 font-semibold">
+                            <p className="p-4 text-gray-400 font-semibold">
                                 Results
                             </p>
                             <hr className="bg-gray-700/50 h-[1px] border-0 w-full" />

@@ -28,13 +28,15 @@ const Home: FunctionComponent<HomeProps> = ({ posts, categorizedPosts }) => {
             </p>
 
             <SearchModal posts={posts} />
-            {Object.keys(categorizedPosts).map((category, index) => (
-                <PostCategory
-                    key={index}
-                    category={category}
-                    posts={categorizedPosts[category]}
-                />
-            ))}
+            <div className="flex flex-col gap-4 mt-4">
+                {Object.keys(categorizedPosts).map((category, index) => (
+                    <PostCategory
+                        key={index}
+                        category={category}
+                        posts={categorizedPosts[category]}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
