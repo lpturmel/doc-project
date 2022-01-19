@@ -1,5 +1,5 @@
 ---
-title: IFT-1003 - Module 1.2
+title: IFT-1003 - Module 1.1
 created: Mardi, 18 janvier 2022
 description: "Suite du module 1.1 sur la qualite de l'information"
 class: "(IFT-1003) Analyse et Conception de systemes d'information "
