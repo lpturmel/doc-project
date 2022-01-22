@@ -67,20 +67,20 @@ const SearchModal: FunctionComponent<SearchModalProps> = ({ posts }) => {
                 <ModalOverlay />
                 <ModalContent onClose={closeModal}>
                     <ModalBody>
-                        <div className="relative flex flex-col bg-gray-800 rounded-md min-h-[400px]">
+                        <div className="relative flex flex-col bg-gray-700 rounded-md min-h-[400px]">
                             <BiSearch className="absolute left-2 top-[16px] w-6 h-6 text-gray-600" />
                             <input
                                 ref={inputRef}
-                                className="w-full rounded-md ring-0 outline-0 p-4 pl-10 bg-transparent"
+                                className="w-full rounded-md ring-0 outline-0 p-4 pl-10 bg-transparent outline-none"
                                 placeholder="Search by class, name"
                                 value={value}
                                 onChange={onChange}
                             />
-                            <hr className="bg-gray-700/50 h-[1px] border-0 w-full" />
+                            <hr className="bg-gray-600/50 h-[1px] border-0 w-full" />
                             <p className="p-4 text-gray-400 font-semibold">
                                 Results
                             </p>
-                            <hr className="bg-gray-700/50 h-[1px] border-0 w-full" />
+                            <hr className="bg-gray-600/50 h-[1px] border-0 w-full" />
                             <div className="flex flex-col overflow-y-auto">
                                 {filteredPosts.map((post) => (
                                     <SearchItem key={post.slug} post={post} />
