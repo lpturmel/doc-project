@@ -2,7 +2,7 @@
 title: IFT-1003 - Module 1.2
 created: Mardi, 18 janvier 2022
 description: "Fonctionnement d'une organisation, croquis, plans et modeles"
-class: "(IFT-1003) Analyse et Conception de systemes d'information "
+class: "(IFT-1003) Analyse et Conception de systemes d'information"
 ---
 
 ## Comprendre le fonctionnement d'une organisation

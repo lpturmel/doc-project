@@ -2,7 +2,7 @@
 title: IFT-1003 - Module 1.3
 created: Mardi, 18 janvier 2022
 description: "Notes du module 3 sur les projets d'intervention en ACSI et les motifs du PA et SI"
-class: "(IFT-1003) Analyse et Conception de systemes d'information "
+class: "(IFT-1003) Analyse et Conception de systemes d'information"
 ---
 
 ### Necessaire evolution du PA et du SI
