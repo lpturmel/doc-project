@@ -5,7 +5,8 @@ export interface ModalOverlayProps {}
 const ModalOverlay: FunctionComponent<ModalOverlayProps> = () => {
     useEffect(() => {
         document.body.style.overflow = "hidden";
-        document.body.style.position = "fixed";
+        // document.body.style.position = "fixed";
+        // document.body.className = "position-fixed md:position-static";
 
         return () => {
             document.body.style.overflow = "";
