@@ -6,6 +6,7 @@ import Prism from "prismjs";
 import { useViewportScroll, motion } from "framer-motion";
 import PostHeader from "../../components/PostHeader";
 import Navbar from "../../components/Navbar";
+import Head from "next/head";
 
 export interface SlugProps {
     content: any;
@@ -30,6 +31,9 @@ const Slug: FunctionComponent<SlugProps> = ({ content, created, title }) => {
 
     return (
         <div className="min-h-full">
+            <Head>
+                <title>{title} - Documentation</title>
+            </Head>
             <Navbar />
             <div
                 style={{
@@ -50,8 +54,8 @@ const Slug: FunctionComponent<SlugProps> = ({ content, created, title }) => {
                 ></motion.div>
             </div>
             <PostHeader title={title} date={created} />
-            <div className="bg-gray-800 h-full py-10">
-                <div className="prose prose-a:text-sky-700 prose-headings:text-gray-200 prose-p:text-gray-200 prose-li:text-gray-200 prose-tr:text-gray-200 prose-strong:text-gray-300 prose-thead:border-gray-600 prose-tr:border-gray-600 prose-h2:text-indigo-500 prose-a:no-underline prose-a:underline prose-strong:text-white prose-pre:scrollbar-hide text-white mt-10 container mx-auto max-w-4xl p-4">
+            <div className="h-full bg-gray-800 py-10">
+                <div className="container prose mx-auto mt-10 max-w-4xl p-4 text-white prose-headings:text-gray-200 prose-h2:text-indigo-500 prose-p:text-gray-200 prose-a:text-sky-700 prose-a:underline prose-a:no-underline prose-strong:text-gray-300 prose-strong:text-white prose-pre:scrollbar-hide prose-li:text-gray-200 prose-thead:border-gray-600 prose-tr:border-gray-600 prose-tr:text-gray-200">
                     {hydratedContent}
                 </div>
             </div>

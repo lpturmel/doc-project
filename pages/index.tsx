@@ -3,6 +3,7 @@ import { FunctionComponent } from "react";
 import { Post } from "../types/post";
 import PostCategory from "../components/PostCategory";
 import SearchModal from "../components/SearchModal";
+import Head from "next/head";
 
 export interface HomeProps {
     categorizedPosts: { [key: string]: Post[] };
@@ -22,13 +23,16 @@ const sortPosts = (posts: Post[]) => {
 };
 const Home: FunctionComponent<HomeProps> = ({ posts, categorizedPosts }) => {
     return (
-        <div className="h-full container mx-auto max-w-4xl p-10 pt-20">
-            <p className="font-bold text-white text-4xl mb-10 text-center">
+        <div className="container mx-auto h-full max-w-4xl p-10 pt-20">
+            <Head>
+                <title> Notes - Documentation </title>
+            </Head>
+            <p className="mb-10 text-center text-4xl font-bold text-white">
                 Notes de cours
             </p>
 
             <SearchModal posts={posts} />
-            <div className="flex flex-col gap-4 mt-4">
+            <div className="mt-4 flex flex-col gap-4">
                 {Object.keys(categorizedPosts).map((category, index) => (
                     <PostCategory
                         key={index}
